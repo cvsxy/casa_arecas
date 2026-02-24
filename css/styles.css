@@ -12,7 +12,7 @@
     --white: #FFFFFF;
 
     --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-body: 'Source Sans 3', -apple-system, sans-serif;
 
     --nav-height: 72px;
 }
@@ -674,6 +674,8 @@ ul {
     font-size: 1.05rem;
     border-radius: 6px;
     box-shadow: 0 4px 16px rgba(196, 112, 75, 0.3);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-form-wrap .btn:hover {
@@ -896,7 +898,16 @@ ul {
 
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 32px;
+    }
+
+    .contact-agent {
+        padding: 28px;
+    }
+
+    .contact-form-wrap .btn {
+        padding: 16px 32px;
+        font-size: 1rem;
     }
 
     .price-callout {
