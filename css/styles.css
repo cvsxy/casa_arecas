@@ -1,18 +1,19 @@
 /* ===== Variables ===== */
 :root {
-    --green: #2D5016;
-    --green-light: #3D6B20;
-    --sand: #E8DCC8;
-    --sand-light: #F2EDE3;
-    --terracotta: #C4704B;
-    --terracotta-dark: #A85D3B;
+    --green: #003c59;
+    --green-light: #0a4d6e;
+    --forest: #395f49;
+    --sand: #dfd7cd;
+    --sand-light: #eae4dc;
+    --terracotta: #c2855f;
+    --terracotta-dark: #a8714d;
     --cream: #FAF8F5;
-    --dark: #2C2C2C;
-    --dark-light: #4A4A4A;
+    --dark: #3c3c3b;
+    --dark-light: #5a5a59;
     --white: #FFFFFF;
 
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Source Sans 3', -apple-system, sans-serif;
+    --font-heading: 'Libre Baskerville', Georgia, serif;
+    --font-body: 'Lato', -apple-system, sans-serif;
 
     --nav-height: 72px;
 }
@@ -442,10 +443,10 @@ ul {
 
 /* Price callout */
 .price-callout {
-    background: linear-gradient(135deg, #1a3a0a 0%, var(--green) 60%, #3D6B20 100%);
+    background: linear-gradient(135deg, #002a40 0%, var(--green) 60%, #0a4d6e 100%);
     border-radius: 8px;
     padding: 44px 52px;
-    box-shadow: 0 8px 32px rgba(45, 80, 22, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 60, 89, 0.25);
 }
 
 .price-callout-inner {
@@ -673,18 +674,18 @@ ul {
     padding: 18px 48px;
     font-size: 1.05rem;
     border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(196, 112, 75, 0.3);
+    box-shadow: 0 4px 16px rgba(194, 133, 95, 0.3);
     max-width: 100%;
     box-sizing: border-box;
 }
 
 .contact-form-wrap .btn:hover {
-    box-shadow: 0 6px 24px rgba(196, 112, 75, 0.4);
+    box-shadow: 0 6px 24px rgba(194, 133, 95, 0.4);
 }
 
 /* ===== Footer ===== */
 .footer {
-    background: linear-gradient(160deg, #1a3a0a 0%, var(--green) 50%, #1e4510 100%);
+    background: linear-gradient(160deg, #002a40 0%, var(--green) 50%, #002a40 100%);
     color: var(--white);
     padding: 56px 0 28px;
 }
