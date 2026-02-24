@@ -89,18 +89,18 @@ ul {
 
 .section-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
 }
 
 .section-label {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--terracotta);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .section-title {
@@ -109,6 +109,16 @@ ul {
     font-weight: 600;
     color: var(--green);
     line-height: 1.2;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 20px auto 0;
+    opacity: 0.6;
 }
 
 .section-subtitle {
@@ -245,6 +255,7 @@ ul {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-overlay {
@@ -334,6 +345,7 @@ ul {
 .highlights {
     padding: 64px 0;
     background: var(--white);
+    border-top: 3px solid var(--terracotta);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -423,9 +435,10 @@ ul {
 
 /* Price callout */
 .price-callout {
-    background: var(--green);
+    background: linear-gradient(135deg, #1a3a0a 0%, var(--green) 60%, #3D6B20 100%);
     border-radius: 8px;
-    padding: 40px 48px;
+    padding: 44px 52px;
+    box-shadow: 0 8px 32px rgba(45, 80, 22, 0.25);
 }
 
 .price-callout-inner {
@@ -501,12 +514,13 @@ ul {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.3s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .gallery-item:hover::after {
-    background: rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
 
 /* ===== Location ===== */
@@ -567,22 +581,32 @@ ul {
 .contact {
     padding: 96px 0;
     background: var(--sand-light);
+    position: relative;
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
-    align-items: start;
+    align-items: center;
+}
+
+.contact-agent {
+    padding: 48px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .contact-agent h3 {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--terracotta);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .agent-name {
@@ -596,26 +620,33 @@ ul {
 .agent-group {
     font-size: 1rem;
     color: var(--dark-light);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .agent-details {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .agent-link {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     font-size: 0.95rem;
     color: var(--dark-light);
-    transition: color 0.3s ease;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.agent-link:last-child {
+    border-bottom: none;
 }
 
 .agent-link:hover {
     color: var(--terracotta);
+    padding-left: 4px;
 }
 
 .agent-link svg {
@@ -623,85 +654,63 @@ ul {
     color: var(--terracotta);
 }
 
-/* Contact form */
-.contact-form {
+.contact-form-wrap {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.contact-form-wrap .btn {
+    padding: 18px 48px;
+    font-size: 1.05rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(196, 112, 75, 0.3);
 }
 
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 12px 16px;
-    border: 1.5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--dark);
-    background: var(--white);
-    transition: border-color 0.3s ease;
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--green);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(0, 0, 0, 0.3);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
+.contact-form-wrap .btn:hover {
+    box-shadow: 0 6px 24px rgba(196, 112, 75, 0.4);
 }
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--green);
+    background: linear-gradient(160deg, #1a3a0a 0%, var(--green) 50%, #1e4510 100%);
     color: var(--white);
-    padding: 48px 0 24px;
+    padding: 56px 0 28px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    margin-bottom: 24px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 28px;
 }
 
 .footer-logo {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .footer-brand p {
-    font-size: 0.85rem;
-    opacity: 0.7;
-    margin-top: 4px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 6px;
 }
 
 .footer-links a {
-    font-size: 0.9rem;
-    opacity: 0.7;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
     transition: opacity 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2px;
 }
 
 .footer-links a:hover {
@@ -713,8 +722,9 @@ ul {
 }
 
 .footer-bottom p {
-    font-size: 0.8rem;
-    opacity: 0.5;
+    font-size: 0.78rem;
+    opacity: 0.4;
+    letter-spacing: 0.03em;
 }
 
 /* ===== Lightbox ===== */
