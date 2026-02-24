@@ -880,6 +880,8 @@ ul {
     .nav-menu a {
         color: var(--dark) !important;
         font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
     }
 
     .nav-cta {
